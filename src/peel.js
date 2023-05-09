@@ -1,4 +1,4 @@
-(function(win) {
+export default function() {
 
   // Constants
 
@@ -1615,6 +1615,5 @@
   };
 
   setCssProperties();
-  win.Peel = Peel;
-
-})(window);
+  return Peel;
+}

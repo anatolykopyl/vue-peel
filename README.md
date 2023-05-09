@@ -1,3 +1,10 @@
+# vue-peel
+
+## About
+
+This is a Vue wrapper around the peel.js library originally created by Andrew Plummer in 2014.
+
+# Original README of Peel.js
 ### About
 
 Peel.js is a Javascript micro library for creating peeling effects using just HTML5.
