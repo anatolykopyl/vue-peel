@@ -1,7 +1,9 @@
 .DS_Store
 node_modules
 docs/.vitepress/dist
+docs/.vitepress/cache
 dist
+vue-peel-v*.tgz
 
 # local env files
 .env.local

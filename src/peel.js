@@ -133,8 +133,8 @@ export default function() {
   function getEventCoordinates(evt, el) {
     var pos = evt.changedTouches ? evt.changedTouches[0] : evt;
     return {
-      'x': pos.clientX - el.offsetLeft + window.scrollX,
-      'y': pos.clientY - el.offsetTop + window.scrollY
+      'x': pos.clientX - el.getBoundingClientRect().left + window.scrollX,
+      'y': pos.clientY - el.getBoundingClientRect().top + window.scrollY
     }
   }
 

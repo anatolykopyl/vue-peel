@@ -11,23 +11,29 @@ const props = defineProps<{
 const Peel = createPeel();
 
 const peelRef = ref<HTMLElement | null>(null)
-let peel: Omit<ReturnType<typeof createPeel>, 'Corners' | 'Defaults'> | null = null;
+const peel = ref<Omit<typeof Peel, 'Corners' | 'Defaults'> | null>(null);
 
 onMounted(() => {
-  peel = new Peel(peelRef.value as HTMLElement, props.options);
+  peel.value = new Peel(peelRef.value as HTMLElement, props.options);
 });
 
 defineExpose({ peel });
 </script>
 
 <template>
-  <div ref="peelRef">
-    <slot name="top"></slot>
-    <slot name="back"></slot>
-    <slot name="bottom"></slot>
+  <div ref="peelRef" class="peel">
+    <div class="peel-top">
+      <slot name="top"></slot>
+    </div>
+    <div class="peel-back">
+      <slot name="back"></slot>
+    </div>
+    <div class="peel-bottom">
+      <slot name="bottom"></slot>
+    </div>
   </div>
 </template>
 
-<style scoped>
+<style>
 @import './peel.css';
 </style>
