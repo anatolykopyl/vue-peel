@@ -9,7 +9,7 @@ hero:
   actions:
     - theme: brand
       text: Examples
-      link: /examples
+      link: /examples/dynamic
 
 features:
   - title: Support
@@ -17,4 +17,3 @@ features:
   - title: Lightweight
     details: Lighter than the original peel.js
 ---
-

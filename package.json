@@ -1,6 +1,6 @@
 {
   "name": "vue-peel",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": {
     "name": "Anatoly Kopyl",
     "email": "hi@kopyl.dev",
@@ -47,6 +47,7 @@
   "devDependencies": {
     "@types/node": "^20.1.1",
     "@vitejs/plugin-vue": "^4.1.0",
+    "sass": "^1.62.1",
     "typescript": "^5.0.2",
     "vite": "^4.3.2",
     "vitepress": "^1.0.0-alpha.75",

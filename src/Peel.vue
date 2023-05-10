@@ -4,7 +4,7 @@ import createPeel from './peel';
 
 const props = defineProps<{
   options?: {
-
+    path?: string
   }
 }>();
 

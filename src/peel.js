@@ -133,8 +133,8 @@ export default function() {
   function getEventCoordinates(evt, el) {
     var pos = evt.changedTouches ? evt.changedTouches[0] : evt;
     return {
-      'x': pos.clientX - el.getBoundingClientRect().left + window.scrollX,
-      'y': pos.clientY - el.getBoundingClientRect().top + window.scrollY
+      'x': pos.clientX - el.getBoundingClientRect().left,
+      'y': pos.clientY - el.getBoundingClientRect().top
     }
   }
 
@@ -672,7 +672,7 @@ export default function() {
    * Finds or creates a layer in the dom.
    * @param {string} id The internal id of the element to be found or created.
    * @param {HTMLElement} parent The parent if the element needs to be created.
-   * @param {numer} zIndex The z index of the layer.
+   * @param {number} zIndex The z index of the layer.
    * @returns {HTMLElement}
    * @private
    */
@@ -1239,14 +1239,11 @@ export default function() {
   }
 
   /**
-   * Gets the next svg clipping id.
+   * Gets a svg clipping id.
    * @public
    */
   SVGClip.getId = function() {
-    if (!SVGClip.id) {
-      SVGClip.id = 1;
-    }
-    return 'svg-clip-' + SVGClip.id++;
+    return 'svg-clip-' + crypto.randomUUID();
   }
 
   /**
