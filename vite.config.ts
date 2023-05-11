@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [vue()],
   build: {
     lib: {
-      entry: resolve(__dirname, 'src/Peel.vue'),
+      entry: resolve(__dirname, 'src/main.ts'),
       name: 'vue-peel',
       fileName: 'vue-peel'
     },
@@ -16,7 +16,8 @@ export default defineConfig({
       output: {
         globals: {
           vue: 'Vue'
-        }
+        },
+        exports: "named",
       }
     }
   }

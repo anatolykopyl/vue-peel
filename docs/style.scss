@@ -16,3 +16,70 @@
   align-items: center;
   font-size: 32px;
 }
+
+.heart {
+  :deep(.peel-top) {
+    background-color: #cd5454;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #ed8484;
+  }
+}
+
+.yellow {
+  :deep(.peel-top) {
+    background-color: #ddd87d;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #eae69f;
+  }
+}
+
+.book {
+  width: 150px;
+  box-shadow: 0px 1px 5px rgba(0,0,0,.5);
+
+  :deep(.peel-top) {
+    background-color: #cabdab;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #f2f2f2;
+  }
+
+  :deep(.peel-bottom) {
+    background-color: #f2f2f2;
+  }
+}
+
+.plum {
+  :deep(.peel-top) {
+    background-color: #b64a67;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #cd7e92;
+  }
+}
+
+.purple {
+  :deep(.peel-top) {
+    background-color: #9e7698;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #d5b5d0;
+  }
+}
+
+.aqua {
+  :deep(.peel-top) {
+    background-color: #409ca0;
+  }
+  
+  :deep(.peel-back) {
+    background-color: #7cb8af;
+  }
+}

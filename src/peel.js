@@ -1,3 +1,5 @@
+import { corners } from './constants'
+
 export default function() {
 
   // Constants
@@ -223,6 +225,7 @@ export default function() {
     this.el = getElement(el, docEl);
     this.constraints = [];
     this.events = [];
+    this.dragHandlers = [];
     this.setupLayers();
     this.setupDimensions();
     this.setCorner(this.getOption('corner'));
@@ -235,12 +238,7 @@ export default function() {
    * @constant
    * @public
    */
-  Peel.Corners = {
-    TOP_LEFT:     0x0,
-    TOP_RIGHT:    0x1,
-    BOTTOM_LEFT:  0x2,
-    BOTTOM_RIGHT: 0x3
-  }
+  Peel.Corners = corners
 
   /**
    * Defaults
@@ -353,7 +351,7 @@ export default function() {
    * @public
    */
   Peel.prototype.handleDrag = function(fn, el) {
-    this.dragHandler = fn;
+    this.dragHandlers.push(fn);
     this.setupDragEvents(el);
   }
 
@@ -402,9 +400,9 @@ export default function() {
     }
 
     function dragMove (evt) {
-      if (self.dragHandler) {
-        callHandler(self.dragHandler, evt);
-      }
+      self.dragHandlers.forEach((fn) => {
+        callHandler(fn, evt);
+      });
       isDragging = true;
     }
 

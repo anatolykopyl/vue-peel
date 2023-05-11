@@ -8,8 +8,11 @@ hero:
   tagline: A Vue library for creating peeling effects using just HTML5.
   actions:
     - theme: brand
-      text: Examples
-      link: /examples/dynamic
+      text: Get Started
+      link: /getting-started
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/anatolykopyl/vue-peel
 
 features:
   - title: Support
