@@ -23,8 +23,29 @@ export default defineConfig({
         text: 'Examples',
         items: [
           {
+            text: 'Static Examples',
+            link: '/examples/static'
+          },
+          {
             text: 'Dynamic Examples',
             link: '/examples/dynamic'
+          }
+        ]
+      },
+      {
+        text: 'API',
+        items: [
+          {
+            text: 'Props',
+            link: '/api/props',
+          },
+          {
+            text: 'Events',
+            link: '/api/events',
+          },
+          {
+            text: 'Instance',
+            link: '/api/instance',
           }
         ]
       }

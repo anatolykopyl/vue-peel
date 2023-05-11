@@ -1,6 +1,6 @@
 {
   "name": "vue-peel",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "author": {
     "name": "Anatoly Kopyl",
     "email": "hi@kopyl.dev",
@@ -8,6 +8,12 @@
   },
   "contributors": [
     "Andrew Plummer"
+  ],
+  "keywords": [
+    "vue",
+    "component",
+    "vue-component",
+    "animation"
   ],
   "license": "MIT",
   "repository": {

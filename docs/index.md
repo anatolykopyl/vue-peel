@@ -16,7 +16,7 @@ hero:
 
 features:
   - title: Support
-    details: Supported by all browsers that support CSS clip paths and transforms
+    details: Supported by all browsers that support CSS clip paths and transforms (generally most evergreen browsers including mobile, but excluding IE)
   - title: Lightweight
-    details: Lighter than the original peel.js
+    details: "Lighter than the original peel.js. 6.53 kB gzipped"
 ---

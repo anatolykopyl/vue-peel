@@ -28,7 +28,7 @@
 
 ## Dragging
 
-Allowing the user to drag the effect by mouse or touch.
+Allowing the user to drag the effect by mouse or touch. This can be done by setting the `drag` prop.
 
 <div class="peelWrapper">
   <Peel

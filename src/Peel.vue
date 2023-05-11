@@ -8,7 +8,7 @@ type TCoords = { x: number, y: number };
 const props = defineProps<{
   handleElement?: HTMLElement;
   peelPosition?: TCoords;
-  corner?: TCoords;
+  corner?: TCoords | typeof corners[keyof typeof corners];
   constraints?: Array<TCoords | typeof corners[keyof typeof corners]>;
   drag?: boolean;
   mode?: "book" | "calendar";
@@ -28,19 +28,16 @@ const Peel = createPeel();
 const peelRef = ref<HTMLElement | null>(null)
 const peel = ref<any | null>(null);
 
-onMounted(() => {
-  peel.value = new Peel(peelRef.value as HTMLElement, props.options);
+function setDragHandlers() {
+  peel.value.removeEvents();
+  peel.value.dragEventsSetup = false;
+  peel.value.dragHandlers = [];
 
   peel.value.handleDrag(
     (event: DragEvent, x: number, y: number) => emit(
       "drag", 
-      {
-        event,
-        x,
-        y,
-        amountClipped: peel.value.getAmountClipped(),
-      }
-    ), 
+      { event, x, y, amountClipped: peel.value.getAmountClipped() },
+    ),
     props.handleElement,
   );
 
@@ -50,13 +47,24 @@ onMounted(() => {
       props.handleElement,
     );
   }
+}
+
+onMounted(() => {
+  peel.value = new Peel(peelRef.value as HTMLElement, props.options);
+
+  setDragHandlers();
 
   if (props.peelPosition) {
     peel.value.setPeelPosition(props.peelPosition.x, props.peelPosition.y);
   }
 
   if (props.corner) {
-    peel.value.setCorner(props.corner.x, props.corner.y);
+    if (props.corner.hasOwnProperty('x') && props.corner.hasOwnProperty('y')) {
+      const { x, y } = props.corner as TCoords;
+      peel.value.setCorner(x, y);
+    } else {
+      peel.value.setCorner(props.corner);
+    }
   }
 
   if (props.constraints) {
@@ -79,6 +87,15 @@ onMounted(() => {
 });
 
 watch(
+  () => props.handleElement,
+  (handle) => {
+    if (handle) {
+      setDragHandlers();
+    }
+  },
+);
+
+watch(
   () => props.peelPosition,
   (pos) => {
     if (pos) {
@@ -91,7 +108,12 @@ watch(
   () => props.corner, 
   (pos) => {
     if (pos) {
-      peel.value.setCorner(pos.x, pos.y);
+      if (pos.hasOwnProperty('x') && pos.hasOwnProperty('y')) {
+        const { x, y } = props.corner as TCoords;
+        peel.value.setCorner(x, y);
+      } else {
+        peel.value.setCorner(props.corner);
+      }
     }
   },
 );
