@@ -447,6 +447,6 @@ Sometimes you want the peel animation to follow an exact path rather than being 
 
 <!-- Fading a peel path -->
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../style.scss';
 </style>

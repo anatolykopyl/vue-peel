@@ -322,6 +322,6 @@ More complex shapes such as paths can create custom shapes:
 </script>
 ```
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../style.scss';
 </style>

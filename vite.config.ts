@@ -20,5 +20,8 @@ export default defineConfig({
         exports: "named",
       }
     }
+  },
+  resolve: {
+    dedupe: ['vue']
   }
 })

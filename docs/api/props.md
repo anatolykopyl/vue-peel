@@ -177,7 +177,7 @@ number[] | undefined
 
 A path along which the peel will follow. This can be a flat line segment (represented by 4 arguments: x1, y1, x2, y2) or a bezier curve (represented by 8 arguments: x1, y1, cp1x, cp1y, cp2x, cp2y, x2, y2 where cp1 and cp2 are the 2 bezier control points, similar to the [bezierCurveTo](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Drawing_shapes#Cubic_Bezier_curves) canvas method.)
 
-<style scoped lang="scss">
+<style lang="scss">
 @import '../style.scss';
 
 .handle {
