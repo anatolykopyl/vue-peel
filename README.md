@@ -1,10 +1,8 @@
 # Vue Peel
 
-<!-- <div style="text-align: center; margin: auto;"> -->
-<div style="display: flex; justify-content: center; align-items: center; gap: 32px; font-size: 128px;">
-  <img src="assets/vue.png" width="30%" style="object-fit: contain;">
-  +
-  <img src="assets/peel.png" width="30%" style="object-fit: contain;">
+<div style="text-align: center; margin: auto;">
+  <img src="assets/vue.png" height="200" style="object-fit: contain;">
+  <img src="assets/peel.png" height="200" style="object-fit: contain;">
 </div>
 
 ## About
