@@ -23,8 +23,6 @@ const emit = defineEmits<{
   (event: 'drag', value: { event: DragEvent, x: number, y: number, amountClipped: number }): void;
 }>();
 
-const Peel = createPeel();
-
 const peelRef = ref<HTMLElement | null>(null)
 const peel = ref<any | null>(null);
 
@@ -50,6 +48,7 @@ function setDragHandlers() {
 }
 
 onMounted(() => {
+  const Peel = createPeel();
   peel.value = new Peel(peelRef.value as HTMLElement, props.options);
 
   setDragHandlers();
